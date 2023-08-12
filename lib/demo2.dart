@@ -5,6 +5,8 @@ void main(){
   List<int> a = [7,28,3,1,7,2,20,5,3,9];
   print(getTwoLargeNumber(a));
   print("Is Sorted => ${isListSorted(a)}");
+  reverseList(a);
+  print(a);
 }
 
 (String, String) getTwoLargeNumber(List<int> a){
@@ -28,4 +30,16 @@ bool isListSorted(List<int> a){
     }
   }
   return true;
+}
+
+void reverseList(List<int> a){
+  int low = 0;
+  int high = a.length - 1;
+  while(low < high){
+    int temp = a[low];
+    a[low] = a[high];
+    a[high] = temp;
+    low++;
+    high--;
+  }
 }
